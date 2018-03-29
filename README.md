@@ -1,4 +1,4 @@
-## Install wkhtmltopdf on Ubuntu
+## Install wkhtmltopdf 
 
 This was tested on:
 
@@ -19,7 +19,7 @@ sudo apt-get install xvfb libfontconfig wkhtmltopdf
 
 ## Using
 
-Now you can create a pdf file in following way :
+Now you can create  pdf file in following way :
      
      use NahidulHasan\Html2pdf\Html2pdfService;
      Html2pdfService::generatePdf('<h1>Test</h1>');
