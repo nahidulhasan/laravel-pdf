@@ -1,6 +1,7 @@
 {
     "name": "nahidulhasan/html2pdf",
     "description": "This package will be generated pdf",
+    "license": "MIT",
     "authors": [
         {
             "name": "Nahidul Hasan",
