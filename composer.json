@@ -10,6 +10,12 @@
     ],
     "minimum-stability": "dev",
     "require": {},
+    
+    "autoload": {
+        "psr-4": {
+            "NahidulHasan\\Html2pdf\\": "src/"
+        }
+    },
 
     "extra": {
         "laravel": {
