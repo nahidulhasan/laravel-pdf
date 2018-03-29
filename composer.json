@@ -1,0 +1,21 @@
+{
+    "name": "nahidulhasan/html2pdf",
+    "description": "This package will be generated pdf",
+    "authors": [
+        {
+            "name": "Nahidul Hasan",
+            "email": "nahidul.cse@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NahidulHasan\\Html2pdf\\Html2pdfServiceProvider"
+            ]
+        }
+    }
+
+}
