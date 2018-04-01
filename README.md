@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install xvfb libfontconfig wkhtmltopdf
 
 #### Upddate Composer
 ```
-  composer require nahidulhasan/html2pdf
+composer require nahidulhasan/html2pdf
 ```
 
 ## Using
