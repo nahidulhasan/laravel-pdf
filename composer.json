@@ -21,7 +21,11 @@
         "laravel": {
             "providers": [
                 "NahidulHasan\\Html2pdf\\Html2pdfServiceProvider"
-            ]
+            ],
+
+            "aliases": {
+                "Pdf": "NahidulHasan\\Html2pdf\\Facades\\Pdf"
+            }
         }
     }
 
