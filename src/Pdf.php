@@ -12,7 +12,7 @@ use Illuminate\Auth\Access\Response;
  * @package laravel-html2pdf
  * @author Nahidul Hasan <nahidul.cse@gmail.com>
  */
-class Html2pdf
+class Pdf
 {
 
     /**
