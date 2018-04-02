@@ -2,8 +2,7 @@
 
 namespace NahidulHasan\Html2pdf;
 
-
-use Illuminate\Auth\Access\Response;
+use Illuminate\Http\Response;
 
 
 /**
