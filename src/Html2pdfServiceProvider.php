@@ -23,6 +23,10 @@ class Html2pdfServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('NahidulHasan\Html2pdf\Html2pdfService');
+        //$this->app->make('NahidulHasan\Html2pdf\Html2pdf');
+
+        $this->app->bind('pdf', function($app) {
+            return new Html2pdf();
+        });
     }
 }
