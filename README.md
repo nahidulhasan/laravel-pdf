@@ -13,7 +13,6 @@ sudo apt-get install xvfb libfontconfig wkhtmltopdf
 ```
 
 #### For docker 
-
 ```
 RUN apt-get update && apt-get install xvfb libfontconfig wkhtmltopdf
 ```
@@ -23,9 +22,21 @@ RUN apt-get update && apt-get install xvfb libfontconfig wkhtmltopdf
 composer require nahidulhasan/html2pdf
 ```
 
-## Using
+After updating composer, add the ServiceProvider to the providers array in config/app.php
 
-Now you can create a pdf file in following way :
-     
-     use NahidulHasan\Html2pdf\Html2pdfService;
-     Html2pdfService::generatePdf('<h1>Test</h1>');
+    NahidulHasan\Html2pdf\Html2pdfServiceProvider::class,
+
+You can optionally use the facade for shorter code. Add this to your facades:
+
+    'Pdf'  => NahidulHasan\Html2pdf\Facades\Pdf::class,
+
+## Basic Usage
+
+To create PDF add something like this to one of your controllers.
+
+```php
+use NahidulHasan\Html2pdf\Facades\Pdf;
+
+Pdf::generatePdf('<h1>Test</h1>');
+
+```
