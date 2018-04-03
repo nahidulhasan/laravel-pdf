@@ -40,6 +40,14 @@ use NahidulHasan\Html2pdf\Facades\Pdf;
 $document = Pdf::generatePdf('<h1>Test</h1>');
 
 ```
+
+You can also create PDF from directly calling laravel blade file . Suppose you have a mail template named greeting in view/mails folder and want to send parameter then you have to call generatePdf method as described in below
+
+```php
+
+$document =  Pdf::generatePdf(view('mails.greeting', ['name' => 'James', 'testVar' => 'demo']));
+
+```
 Now If you want to send mail to your client attaching pdf  then you can follow this code
 
 ```php
@@ -56,5 +64,7 @@ Now If you want to send mail to your client attaching pdf  then you can follow t
     }
   
 ```
+
 ### License
+
 Html2PDF for Laravel is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
