@@ -1,4 +1,4 @@
-## Install wkhtmltopdf on Ubuntu
+## Install wkhtmltopdf
 
 This was tested on:
 
