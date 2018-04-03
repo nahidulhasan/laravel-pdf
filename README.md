@@ -47,7 +47,9 @@ You can also create PDF from directly calling laravel blade file . Suppose you h
 
 $document =  Pdf::generatePdf(view('mails.greeting', ['name' => 'James', 'testVar' => 'demo']));
 
+
 ```
+
 Now If you want to send mail to your client attaching pdf  then you can follow this code
 
 ```php
