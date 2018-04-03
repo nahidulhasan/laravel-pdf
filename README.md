@@ -56,3 +56,5 @@ Now If you want to send mail to your client attaching pdf  then you can follow t
     }
   
 ```
+### License
+Html2PDF for Laravel is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
