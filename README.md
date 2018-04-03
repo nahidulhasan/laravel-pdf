@@ -43,7 +43,7 @@ $document = Pdf::generatePdf('<h1>Test</h1>');
 Now If you want to send mail to your client ataching pdf  then you can follow this code
 
 ```php
-     /**
+    /**
      * Build the message.
      *
      * @return $this
