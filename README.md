@@ -45,6 +45,8 @@ You can also create PDF from directly calling laravel blade file . Suppose you h
 
 ```php
 
+<!-- mail template stored in resources/views/mails/greeting.blade.php -->
+
 $document =  Pdf::generatePdf(view('mails.greeting', ['name' => 'James', 'testVar' => 'demo']));
 
 
