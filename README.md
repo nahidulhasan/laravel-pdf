@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install xvfb libfontconfig wkhtmltopdf
 composer require nahidulhasan/html2pdf
 ```
 
-After updating composer, add the ServiceProvider to the providers array in config/app.php
+If laravel version is less than 5.5 , add the ServiceProvider to the providers array in config/app.php
 
     NahidulHasan\Html2pdf\Html2pdfServiceProvider::class,
 
@@ -37,6 +37,13 @@ To create PDF add something like this to one of your controllers.
 ```php
 use NahidulHasan\Html2pdf\Facades\Pdf;
 
-Pdf::generatePdf('<h1>Test</h1>');
+$document = Pdf::generatePdf('<h1>Test</h1>');
 
+```
+Now If you want to send mail to your client ataching pdf  then you can follow this code
+
+```php
+  return $this->from('username@gmail.com')
+                    ->view('mails.demo')
+                    ->attachData($document, ' Invoice.pdf');
 ```
