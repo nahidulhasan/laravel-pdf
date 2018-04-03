@@ -53,17 +53,17 @@ $document =  Pdf::generatePdf(view('mails.greeting', ['name' => 'James', 'testVa
 Now If you want to send mail to your client attaching pdf  then you can follow this code
 
 ```php
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        return $this->from('username@gmail.com')
-                    ->view('mails.demo')
-                    ->attachData($document, ' Invoice.pdf');
-    }
+/**
+ * Build the message.
+ *
+ * @return $this
+ */
+public function build()
+{
+    return $this->from('username@gmail.com')
+                ->view('mails.demo')
+                ->attachData($document, 'Invoice.pdf');
+}
   
 ```
 
