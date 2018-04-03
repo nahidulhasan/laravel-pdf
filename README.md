@@ -1,11 +1,16 @@
-## Install wkhtmltopdf
+# Laravel-Html2Pdf
+
+> A Simple package for easily generate PDF documents from HTML 
+
+
+## Installation
+
+#### Install wkhtmltopdf 
 
 This was tested on:
 
 - Ubuntu 14.04 x64
 - Ubuntu 16.04 x64
-
-#### Installation
 
 ```sh
 sudo apt-get update
