@@ -1,6 +1,6 @@
 # Laravel-Html2Pdf
 
-> A Simple package for easily generate PDF documents from HTML 
+> A Simple package for easily generating PDF documents from HTML 
 
 
 ## Installation

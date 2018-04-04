@@ -1,6 +1,6 @@
 {
     "name": "nahidulhasan/html2pdf",
-    "description": "This package will be generated pdf",
+    "description": "A Simple package for easily generating PDF documents from HTML",
     "license": "MIT",
     "authors": [
         {
