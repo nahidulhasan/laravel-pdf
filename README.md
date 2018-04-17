@@ -1,6 +1,6 @@
 # Laravel-Html2Pdf
 
-> A Simple package for easily generating PDF documents from HTML .This package is specially for laravel but you can use this without laravel 
+> A Simple package for easily generating PDF documents from HTML .This package is specially for laravel but you can use this without laravel .
 
 
 ## Installation
@@ -16,6 +16,12 @@ This was tested on:
 sudo apt-get update
 sudo apt-get install xvfb libfontconfig wkhtmltopdf
 ```
+
+#### For Mac
+```sh
+brew install Caskroom/cask/wkhtmltopdf
+```
+
 
 #### For docker 
 ```
