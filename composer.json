@@ -1,6 +1,6 @@
 {
     "name": "nahidulhasan/html2pdf",
-    "description": "A Simple package for easily generating PDF documents from HTML .This package is specially for laravel but you can use this without laravel",
+    "description": "A Simple package for easily generating PDF documents from HTML .This package is specially for laravel but you can use this without laravel.",
     "license": "MIT",
     "authors": [
         {

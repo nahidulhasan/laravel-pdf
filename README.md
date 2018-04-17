@@ -1,6 +1,6 @@
 # Laravel-Html2Pdf
 
-> A Simple package for easily generating PDF documents from HTML .This package is specially for laravel but you can use this without laravel .
+> A Simple package for easily generating PDF documents from HTML.This package is specially for laravel but you can use this without laravel.
 
 
 ## Installation
@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install xvfb libfontconfig wkhtmltopdf
 composer require nahidulhasan/html2pdf
 ```
 
-If laravel version is less than 5.5 , add the ServiceProvider to the providers array in config/app.php
+If laravel version < 5.5 , add the ServiceProvider to the providers array in config/app.php
 
     NahidulHasan\Html2pdf\Html2pdfServiceProvider::class,
 
