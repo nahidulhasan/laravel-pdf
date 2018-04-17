@@ -74,6 +74,19 @@ public function build()
   
 ```
 
+### Running without Laravel
+
+You can use this library without using Laravel.
+
+Example:
+
+```
+use NahidulHasan\Html2pdf\Pdf;
+
+$obj = new Pdf();
+$document = $obj->generatePdf('<h1>Test</h1>');
+```
+
 ### License
 
 Html2PDF for Laravel is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
