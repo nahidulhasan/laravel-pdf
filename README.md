@@ -1,5 +1,13 @@
 # Laravel-Html2Pdf
 
+
+[![Latest Stable Version](https://poser.pugx.org/nahidulhasan/html2pdf/v/stable)](https://packagist.org/packages/nahidulhasan/html2pdf)
+[![Total Downloads](https://poser.pugx.org/nahidulhasan/html2pdf/downloads)](https://packagist.org/packages/nahidulhasan/html2pdf)
+[![Latest Unstable Version](https://poser.pugx.org/nahidulhasan/html2pdf/v/unstable)](https://packagist.org/packages/nahidulhasan/html2pdf)
+[![License](https://poser.pugx.org/nahidulhasan/html2pdf/license)](https://packagist.org/packages/nahidulhasan/html2pdf)
+
+
+
 > A Simple package for easily generating PDF documents from HTML.This package is specially for laravel but you can use this without laravel.
 
 
