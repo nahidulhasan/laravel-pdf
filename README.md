@@ -25,12 +25,6 @@ sudo apt-get update
 sudo apt-get install xvfb libfontconfig wkhtmltopdf
 ```
 
-#### For Mac
-```sh
-brew install Caskroom/cask/wkhtmltopdf
-```
-
-
 #### For docker 
 ```
 RUN apt-get update && apt-get install xvfb libfontconfig wkhtmltopdf
@@ -41,7 +35,7 @@ RUN apt-get update && apt-get install xvfb libfontconfig wkhtmltopdf
 composer require nahidulhasan/html2pdf
 ```
 
-If laravel version < 5.5 , add the ServiceProvider to the providers array in config/app.php
+If laravel version < 5.5, add the ServiceProvider to the providers array in config/app.php
 
     NahidulHasan\Html2pdf\Html2pdfServiceProvider::class,
 
@@ -60,7 +54,7 @@ $document = Pdf::generatePdf('<h1>Test</h1>');
 
 ```
 
-You can also create PDF from directly calling laravel blade file . Suppose you have a mail template named greeting in view/mails folder and want to send parameter then you have to call generatePdf method as described in below
+You can also create PDF from directly calling laravel blade file. Suppose you have a mail template named greeting in view/mails folder and want to send parameter then you have to call generatePdf method as described in below
 
 ```php
 
@@ -71,7 +65,7 @@ $document =  Pdf::generatePdf(view('mails.greeting', ['name' => 'James', 'testVa
 
 ```
 
-Now If you want to send mail to your client attaching pdf  then you can follow this code
+Now If you want to send mail to your client attaching pdf then you can follow this code
 
 ```php
 /**
