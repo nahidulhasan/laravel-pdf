@@ -34,10 +34,28 @@ class Pdf
     /**
      * Make the PDF downloadable by the user
      *
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public  function download()
+    {
+        $file = public_path(). "/page.pdf";
+
+        $headers = [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' =>  'attachment; filename="'.'filename.pdf'.'"',
+        ];
+
+        return response()->download($file, 'filename.pdf', $headers);
+    }
+
+
+    /**
+     * Make the PDF downloadable by the user
+     *
      * @param string $input
      * @return \Illuminate\Http\Response
      */
-    public function download($input = 'document.pdf' ){
+    /*public function download($input = 'document.pdf' ){
 
         $output = $this->generatePdf($input);
 
@@ -45,6 +63,6 @@ class Pdf
             'Content-Type' => 'application/pdf',
             'Content-Disposition' =>  'attachment; filename="'.$input.'"'
         ));
-    }
+    }*/
 
 }
