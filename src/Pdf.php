@@ -40,6 +40,12 @@ class Pdf
     {
         $file = public_path(). "/page.pdf";
 
+        if (!is_file($file))
+        {
+            echo("404 File not found!");
+            exit();
+        }
+
         $headers = [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' =>  'attachment; filename="'.'filename.pdf'.'"',
