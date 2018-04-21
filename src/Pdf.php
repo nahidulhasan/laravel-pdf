@@ -56,19 +56,24 @@ class Pdf
 
 
     /**
-     * Make the PDF downloadable by the user
-     *
-     * @param string $input
-     * @return \Illuminate\Http\Response
+     * Open PDF in the browser
      */
-    /*public function download($input = 'document.pdf' ){
+    public function stream()
+    {
+        $file= public_path(). "/page.pdf";
 
-        $output = $this->generatePdf($input);
+        if (!is_file($file))
+        {
+            echo("404 File not found!");
+            exit();
+        }
 
-        return new Response($output, 200, array(
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' =>  'attachment; filename="'.$input.'"'
-        ));
-    }*/
+        header('Content-type: application/pdf');
+        header('Content-Disposition: inline; filename="' . 'filename.pdf' . '"');
+        header('Content-Transfer-Encoding: binary');
+        header('Accept-Ranges: bytes');
+        echo file_get_contents($file);
+
+    }
 
 }
