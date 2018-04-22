@@ -40,8 +40,7 @@ class Pdf
     {
         $file = public_path(). "/page.pdf";
 
-        if (!is_file($file))
-        {
+        if (!is_file($file)) {
             echo("404 File not found!");
             exit();
         }
@@ -60,10 +59,9 @@ class Pdf
      */
     public function stream()
     {
-        $file= public_path(). "/page.pdf";
+        $file = public_path(). "/page.pdf";
 
-        if (!is_file($file))
-        {
+        if (!is_file($file)) {
             echo("404 File not found!");
             exit();
         }
