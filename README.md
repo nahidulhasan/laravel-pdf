@@ -82,6 +82,15 @@ public function build()
   
 ```
 
+### Other Usage 
+
+It is also possible to use the following methods :
+
+``` pdf::download  :``` Download the PDF file
+
+``` pdf::stream  :```   Open the PDF file in browser 
+
+ 
 ### Running without Laravel
 
 You can use this library without using Laravel.
