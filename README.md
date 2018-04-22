@@ -86,9 +86,9 @@ public function build()
 
 It is also possible to use the following methods :
 
-``` pdf::download  :``` Download the PDF file
+``` pdf::download ``` Download the PDF file
 
-``` pdf::stream  :```   Open the PDF file in browser 
+``` pdf::stream  ```  Open the PDF file in browser 
 
  
 ### Running without Laravel
