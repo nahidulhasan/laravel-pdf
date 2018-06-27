@@ -2,9 +2,6 @@
 
 namespace NahidulHasan\Html2pdf;
 
-use Illuminate\Http\Response;
-
-
 /**
  * Laravel htm2pdf: convert html into pdf
  *
@@ -22,11 +19,18 @@ class Pdf
      */
     public function generatePdf($input)
     {
+
         file_put_contents('page.html', $input);
 
-        shell_exec('xvfb-run wkhtmltopdf page.html page.pdf');
+        if (shell_exec('xvfb-run wkhtmltopdf page.html page.pdf')) {
 
-        return file_get_contents('page.pdf');
+            return file_get_contents('page.pdf');
+
+        } elseif (shell_exec('wkhtmltopdf page.html page.pdf')) {
+
+            return file_get_contents('page.pdf');
+
+        }
 
     }
 
@@ -36,7 +40,7 @@ class Pdf
      *
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
-    public  function download()
+    public function download()
     {
         $file = public_path(). "/page.pdf";
 
