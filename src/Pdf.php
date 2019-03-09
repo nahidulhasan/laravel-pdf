@@ -19,18 +19,26 @@ class Pdf
      */
     public function generatePdf($input)
     {
+        $key = time() . '-' . rand(10000, 99999);
 
-        file_put_contents('page.html', $input);
+        $htmlFile = '../storage/page-' . $key . '.html';
+        $pdfFile = '../storage/page-' . $key . '.pdf';
 
-        if (shell_exec('xvfb-run wkhtmltopdf page.html page.pdf')) {
 
-            return file_get_contents('page.pdf');
+        file_put_contents($htmlFile, $input);
 
-        } elseif (shell_exec('wkhtmltopdf page.html page.pdf')) {
+        if (shell_exec("xvfb-run wkhtmltopdf {$htmlFile} {$pdfFile}")) {
 
-            return file_get_contents('page.pdf');
+            return file_get_contents($pdfFile);
+
+        } elseif (shell_exec("wkhtmltopdf {$htmlFile} {$pdfFile}")) {
+
+            return file_get_contents($pdfFile);
 
         }
+
+       // shell_exec("rm {$htmlFile}");
+       // shell_exec("rm {$pdfFile}");
 
     }
 
