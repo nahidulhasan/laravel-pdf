@@ -24,22 +24,13 @@ class Pdf
         $htmlFile = '../storage/page-' . $key . '.html';
         $pdfFile = '../storage/page-' . $key . '.pdf';
 
-
         file_put_contents($htmlFile, $input);
 
-        if (shell_exec("xvfb-run wkhtmltopdf {$htmlFile} {$pdfFile}")) {
+        $generatedFile = $this->executeCommand($htmlFile, $pdfFile);
 
-            $file = file_get_contents($pdfFile);
-
-            return $this->removeAndReturnFile($htmlFile, $pdfFile, $file);
-
-        } elseif (shell_exec("wkhtmltopdf {$htmlFile} {$pdfFile}")) {
-
-            $file = file_get_contents($pdfFile);
-
-            return $this->removeAndReturnFile($htmlFile, $pdfFile, $file);
-
-        }
+        $file = $generatedFile ?: '';
+        
+        return $this->removeAndReturnFile($htmlFile, $pdfFile, $file);
 
     }
 
@@ -54,9 +45,42 @@ class Pdf
     {
         $file = $this->generatePdf($input);
 
+       /* header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="'.basename($file).'"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($file));
+        readfile($file);
+        exit;*/
+
         $headers = [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'attachment; filename="' . 'filename.pdf' . '"',
+        ];
+
+        return $file;
+
+
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function download_old()
+    {
+        $file = public_path(). "/page.pdf";
+
+        if (!is_file($file)) {
+            echo("404 File not found!");
+            exit();
+        }
+
+        $headers = [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' =>  'attachment; filename="'.'filename.pdf'.'"',
         ];
 
         return response()->download($file, 'filename.pdf', $headers);
@@ -93,5 +117,22 @@ class Pdf
         shell_exec("rm {$pdfFile}");
 
         return $file;
+    }
+
+    /**
+     * @param $htmlFile
+     * @param $pdfFile
+     * @return bool|string
+     */
+    public function executeCommand($htmlFile, $pdfFile)
+    {
+        if (shell_exec("xvfb-run wkhtmltopdf {$htmlFile} {$pdfFile}")) {
+            $generatedFile = file_get_contents($pdfFile);
+        } elseif (shell_exec("wkhtmltopdf {$htmlFile} {$pdfFile}")) {
+            $generatedFile = file_get_contents($pdfFile);
+        } else {
+            $generatedFile = '';
+        }
+        return $generatedFile;
     }
 }
