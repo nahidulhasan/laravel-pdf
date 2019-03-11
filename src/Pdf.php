@@ -29,7 +29,7 @@ class Pdf
         $generatedFile = $this->executeCommand($htmlFile, $pdfFile);
 
         $file = $generatedFile ?: '';
-        
+
         return $this->removeAndReturnFile($htmlFile, $pdfFile, $file);
 
     }
