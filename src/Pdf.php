@@ -41,49 +41,14 @@ class Pdf
      * @param $input
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
+    
     public function download($input)
     {
         $file = $this->generatePdf($input);
 
-       /* header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="'.basename($file).'"');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($file));
-        readfile($file);
-        exit;*/
-
-        $headers = [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'attachment; filename="' . 'filename.pdf' . '"',
-        ];
-
         return $file;
 
 
-    }
-
-
-    /**
-     * @return mixed
-     */
-    public function download_old()
-    {
-        $file = public_path(). "/page.pdf";
-
-        if (!is_file($file)) {
-            echo("404 File not found!");
-            exit();
-        }
-
-        $headers = [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' =>  'attachment; filename="'.'filename.pdf'.'"',
-        ];
-
-        return response()->download($file, 'filename.pdf', $headers);
     }
 
 
