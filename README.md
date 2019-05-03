@@ -82,15 +82,50 @@ public function build()
   
 ```
 
+### Download pdf
+
+Save the PDF to a file in a specific folder, and then download  it
+
+``` 
+use NahidulHasan\Html2pdf\Pdf;
+
+$obj = new Pdf();
+
+$html = '<html><body>'
+    . '<p>Put your html here, or generate it with your favourite '
+    . 'templating system.</p>'
+    . '</body></html>';
+
+$invoice = $obj->generatePdf($html);
+
+define('INVOICE_DIR', public_path('uploads/invoices'));
+
+if (!is_dir(INVOICE_DIR)) {
+    mkdir(INVOICE_DIR, 0755, true);
+}
+
+$outputName = str_random(10);
+$pdfPath = INVOICE_DIR.'/'.$outputName.'.pdf';
+
+
+File::put($pdfPath, $invoice);
+
+$headers = [
+    'Content-Type' => 'application/pdf',
+    'Content-Disposition' =>  'attachment; filename="'.'filename.pdf'.'"',
+];
+
+return response()->download($pdfPath, 'filename.pdf', $headers);
+
+```
+
 ### Other Usage 
 
 It is also possible to use the following methods :
 
-``` pdf::download ``` Download the PDF file
+``` pdf::stream('<h1>Test</h1>')  ```  Open the PDF file in browser 
 
-``` pdf::stream  ```  Open the PDF file in browser 
 
- 
 ### Running without Laravel
 
 You can use this library without using Laravel.
