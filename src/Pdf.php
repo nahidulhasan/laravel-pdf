@@ -21,14 +21,14 @@ class Pdf
     {
         $key = time() . '-' . rand(10000, 99999);
 
-        $htmlFile = '../storage/page-' . $key . '.html';
-        $pdfFile = '../storage/page-' . $key . '.pdf';
+        $htmlFile = storage_path() . '/page-' . $key . '.html';
+        $pdfFile = storage_path() . '/page-' . $key . '.pdf';
 
         file_put_contents($htmlFile, $input);
 
         $generatedFile = $this->executeCommand($htmlFile, $pdfFile);
 
-        $file = $generatedFile ?: '';
+        $file = $generatedFile ? : '';
 
         return $this->removeAndReturnFile($htmlFile, $pdfFile, $file);
 
@@ -41,7 +41,7 @@ class Pdf
      * @param $input
      * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
      */
-    
+
     public function download($input)
     {
         $file = $this->generatePdf($input);
