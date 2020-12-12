@@ -91,9 +91,9 @@ class Pdf
      */
     public function executeCommand($htmlFile, $pdfFile)
     {
-        if (shell_exec("xvfb-run wkhtmltopdf {$htmlFile} {$pdfFile}")) {
+        if (shell_exec("xvfb-run wkhtmltopdf {$htmlFile} {$pdfFile} 2>&1")) {
             $generatedFile = file_get_contents($pdfFile);
-        } elseif (shell_exec("wkhtmltopdf {$htmlFile} {$pdfFile}")) {
+        } elseif (shell_exec("wkhtmltopdf {$htmlFile} {$pdfFile} 2>&1")) {
             $generatedFile = file_get_contents($pdfFile);
         } else {
             $generatedFile = '';
